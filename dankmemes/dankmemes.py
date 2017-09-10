@@ -3,7 +3,7 @@ import MySQLdb
 from discord.ext import commands
 from cogs.utils import checks
 
-class dankmemecreator:
+class dankmemes:
     """Dem Gosh Darn Dank Memes"""
 
     def __init__(self, bot):
@@ -97,5 +97,5 @@ class dankmemecreator:
         
 
 def setup(bot):
-    bot.add_cog(dankmemecreator(bot))
+    bot.add_cog(dankmemes(bot))
 
