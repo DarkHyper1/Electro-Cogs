@@ -15,3 +15,6 @@ Commands for this cog are fairly simple, some being admin commands and some not.
 3. Grab all Dank Memes, and their IDs (Admin): ```[p]graballmemes```
 4. Delete a meme (Admin): ```[p]deletememe <id>```
 5. Edit a meme ID: ```[p]editmemeid <oldid> <newid>```
+
+## Half-Life Commands:
+1. Punish a user for saying Half-Life ```[p]halflife```
