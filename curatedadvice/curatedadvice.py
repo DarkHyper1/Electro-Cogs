@@ -100,18 +100,18 @@ class dankmemes:
     async def approveadvice(self, approveid):
          """Approve Advice From The Table (Run [p]grabadvice to get submitted ids"""
     
-       db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
                      
-       cur = db.cursor()
-       cur.execute("SELECT advice FROM submitadvice WHERE id =\"{}\";".format(approveid))
-       approved = cur.fetchall()
-       cur.execute("INSERT INTO advice (advice) VALUES= (\"{}\")".format(approveid))
-       db.commit()
-       await self.bot.say("Approved")
-       db.close
+        cur = db.cursor()
+        cur.execute("SELECT advice FROM submitadvice WHERE id =\"{}\";".format(approveid))
+        approved = cur.fetchall()
+        cur.execute("INSERT INTO advice (advice) VALUES= (\"{}\")".format(approveid))
+        db.commit()
+        await self.bot.say("Approved")
+        db.close
         
 
 def setup(bot):
