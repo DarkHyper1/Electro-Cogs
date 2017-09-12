@@ -126,7 +126,7 @@ class Advice:
                      db="electrom_dankmemes")
                      
         cur = db.cursor()
-        cur.execute("SELECT submitadvice, id from advice ORDER BY id desc")
+        cur.execute("SELECT advice, id from submitadvice ORDER BY id desc")
         msg = cur.fetchall()
         await self.bot.say(msg)
         db.close()
