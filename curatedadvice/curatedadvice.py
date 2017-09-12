@@ -5,15 +5,15 @@ from discord.ext import commands
 from cogs.utils import checks
 
 class dankmemes:
-    """Dem Gosh Darn Dank Memes"""
+    """Get Curated Spam Delivered Straight to Your Bot!"""
 
     def __init__(self, bot):
         self.bot = bot
    
 
     @commands.command()
-    async def dankmemes(self):
-        """Grab The Newest Dank Meme!"""
+    async def advice(self):
+        """Grab The Newest Advice"""
 
 
         #Your code will go here
@@ -24,13 +24,13 @@ class dankmemes:
         cur = db.cursor()
         cur.execute("SELECT advice from advice ORDER BY id desc LIMIT 1")
         newmsg = cur.fetchall()
-        printout = str(newmsg) [3:-5]
+        printout = str(newmsg)
         await self.bot.say(printout) 
         db.close()
         
     @commands.command()
-    async def submitmemes(self, link):
-        """Submit memes. Or Dank ones."""
+    async def submitadvice(self, advice):
+        """Submit advice for admins to review. NO LINKS PLEASE"""
         
         
         
@@ -39,14 +39,14 @@ class dankmemes:
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
         cur = db.cursor()
-        cur.execute("INSERT INTO submitadvice (link) VALUES (\"{}\")".format(link))
+        cur.execute("INSERT INTO submitadvice (advice) VALUES (\"{}\")".format(advice))
         db.commit()
-        await self.bot.say("Your Meme has been Submitted!")
+        await self.bot.say("Your Advice has been Submitted!")
         db.close()
         
     @commands.command()
     @checks.admin()
-    async def graballmemes(self):
+    async def graballadvice(self):
         """An Admin Command to grab all memes and IDs to remove them"""
         
         
@@ -64,7 +64,7 @@ class dankmemes:
         
     @commands.command()
     @checks.admin()
-    async def deletememe(self, id):
+    async def deletadvice(self, id):
         """Delete a meme based on ID"""
         
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
@@ -80,7 +80,7 @@ class dankmemes:
         
     @commands.command()
     @checks.admin()
-    async def editmemeid(self, oldid, newid):
+    async def editadviceid(self, oldid, newid):
         """Change the ID of a Meme to make it first"""
         
         
@@ -94,7 +94,24 @@ class dankmemes:
         db.commit()
         await self.bot.say("Meme has been updated")
         db.close()
+        
+    @commands.command()
+    @checks.admin()
+    async def approveadvice(self, approveid):
+         """Approve Advice From The Table (Run [p]grabadvice to get submitted ids"""
     
+       db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+                     user="electrom_dankmemesuser",         # your username
+                     passwd="DankMemes",  # your password
+                     db="electrom_dankmemes")
+                     
+       cur = db.cursor()
+       cur.execute("SELECT advice FROM submitadvice WHERE id =\"{}\";".format(approveid))
+       approved = cur.fetchall()
+       cur.execute("INSERT INTO advice (advice) VALUES= (\"{}\")".format(approveid))
+       db.commit()
+       await self.bot.say("Approved")
+       db.close
         
 
 def setup(bot):
