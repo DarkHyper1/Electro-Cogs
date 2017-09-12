@@ -24,7 +24,7 @@ class Advice:
         cur = db.cursor()
         cur.execute("SELECT advice from advice ORDER BY id desc LIMIT 1")
         newmsg = cur.fetchall()
-        printout = str(newmsg) [3:-5]
+        printout = str(newmsg) [6:-10]
         await self.bot.say(printout) 
         db.close()
         
