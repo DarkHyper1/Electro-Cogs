@@ -108,7 +108,7 @@ class Advice:
         cur = db.cursor()
         cur.execute("SELECT advice FROM submitadvice WHERE id =\"{}\";".format(approveid))
         approved = cur.fetchall()
-        cur.execute("INSERT INTO advice (advice) VALUES= (\"{}\")".format(approveid))
+        cur.execute("INSERT INTO advice (advice) VALUES (\"{}\")".format(approveid))
         db.commit()
         await self.bot.say("Approved")
         db.close
