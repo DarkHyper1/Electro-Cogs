@@ -98,7 +98,7 @@ class Advice:
     @commands.command()
     @checks.admin()
     async def approveadvice(self, approveid):
-        """Approve Advice From The Table (Run [p]grabadvice to get submitted ids"""
+        """Approve Advice From The Table (Run [p]graballunapprovedadvice to get submitted ids"""
     
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
@@ -112,6 +112,24 @@ class Advice:
         db.commit()
         await self.bot.say("Approved")
         db.close
+        
+    @commands.command()
+    @checks.admin()
+    async def graballunapprovedadvice(self):
+        """An Admin Command to grab all unaprroved advice"""
+        
+        
+        
+        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+                     user="electrom_dankmemesuser",         # your username
+                     passwd="DankMemes",  # your password
+                     db="electrom_dankmemes")
+                     
+        cur = db.cursor()
+        cur.execute("SELECT submitadvice, id from advice ORDER BY id desc")
+        msg = cur.fetchall()
+        await self.bot.say(msg)
+        db.close()
         
 
 def setup(bot):
