@@ -85,8 +85,8 @@ class advice:
         
         
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
-                     user="electrom_dankmemesuser",         # your username
-                     passwd="DankMemes",  # your password
+                     user="electrom_dankmemesuser",         # your usernam
+                     passwd="DankMemes",  # your passwor
                      db="electrom_dankmemes")
                      
         cur = db.cursor()
@@ -98,7 +98,7 @@ class advice:
     @commands.command()
     @checks.admin()
     async def approveadvice(self, approveid):
-         """Approve Advice From The Table (Run [p]grabadvice to get submitted ids"""
+        """Approve Advice From The Table (Run [p]grabadvice to get submitted ids"""
     
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
