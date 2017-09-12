@@ -4,7 +4,7 @@ import MySQLdb
 from discord.ext import commands
 from cogs.utils import checks
 
-class advice:
+class Advice:
     """Get Curated Spam Delivered Straight to Your Bot!"""
 
     def __init__(self, bot):
@@ -115,4 +115,4 @@ class advice:
         
 
 def setup(bot):
-    bot.add_cog(advice(bot))
+    bot.add_cog(Advice(bot))
