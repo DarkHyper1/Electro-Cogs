@@ -1,5 +1,9 @@
 import discord
-import MySQLdb
+try:
+    import MySQLdb
+    MySQLdb_available = True
+except:
+    MySQLdb_available = False
 from discord.ext import commands
 from cogs.utils import checks
 
@@ -97,5 +101,7 @@ class dankmemes:
         
 
 def setup(bot):
+    if MySQLdb_available is False:
+        raise RuntimeError("You don't have MySQLdb installed."
     bot.add_cog(dankmemes(bot))
 
