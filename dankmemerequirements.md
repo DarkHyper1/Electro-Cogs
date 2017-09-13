@@ -11,7 +11,7 @@ Debain / Ubuntu: ```sudo apt-get install python-dev libmysqlclient-dev```
 
 RedHat / CentOS: ```sudo yum install python-devel mysql-devel```
 
-Windows / MacOS: No commands required!
+Windows / MacOS: No Extra Commands!
 
 ### Since Red uses Python 3, we must also run:
 
