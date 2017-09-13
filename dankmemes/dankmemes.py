@@ -102,6 +102,7 @@ class dankmemes:
 
 def setup(bot):
     if MySQLdb_available is False:
-        raise RuntimeError("You don't have MySQLdb installed."
+        raise RuntimeError("You don't have MySQLdb installed.")
+        return
     bot.add_cog(dankmemes(bot))
 
