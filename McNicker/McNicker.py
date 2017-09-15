@@ -8,11 +8,14 @@ class McNicker:
         self.bot = bot
 
     @commands.command()
-    async def McNick(self, playername, nickname, discord.Member):
+    async def McNick(self, playername, nickname, ctx):
         """Enter a Nickname. It will be changed In-game."""
 
         #Your code will go here
-        await self.bot.say(user.mention + " Has updated " + playername + "s Nickname!")
+        server = ctx.message.server
+        user = ctx.message.author
+        member_object = server.get_member(user.id)
+        await self.bot.say("<@" + member_object + ">" + " Has updated " + playername + "s Nickname!")
         await self.bot.say("Nick Changed!")
         message = "nick {} {}".format(playername, nickname)
         await self.bot.send_message(self.bot.get_channel('320638374551748609'), "nick {} {}".format(playername, nickname))
