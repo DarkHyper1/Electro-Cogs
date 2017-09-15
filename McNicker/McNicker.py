@@ -12,8 +12,8 @@ class McNicker:
         """Enter a Nickname. It will be changed In-game."""
 
         #Your code will go here
-        user = ctx.message.author
-        await self.bot.say("<@" + user.id + ">" + " Has updated " + playername + "s Nickname!")
+        author = ctx.message.author
+        await self.bot.say(ctx.message.author.mention + " Has updated " + playername + "s Nickname!")
         await self.bot.say("Nick Changed!")
         message = "nick {} {}".format(playername, nickname)
         await self.bot.send_message(self.bot.get_channel('320638374551748609'), "nick {} {}".format(playername, nickname))
