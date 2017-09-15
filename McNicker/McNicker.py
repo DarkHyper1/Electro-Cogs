@@ -8,7 +8,7 @@ class McNicker:
         self.bot = bot
 
     @commands.command()
-    async def McNick(self, playername, nickname, user : discord.Member):
+    async def McNick(self, playername, nickname, discord.Member):
         """Enter a Nickname. It will be changed In-game."""
 
         #Your code will go here
