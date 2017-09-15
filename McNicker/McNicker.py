@@ -7,7 +7,7 @@ class McNicker:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(Pass_Context=True)
+    @commands.command(pass_context=True)
     async def McNick(self, ctx, playername, nickname):
         """Enter a Nickname. It will be changed In-game."""
 
