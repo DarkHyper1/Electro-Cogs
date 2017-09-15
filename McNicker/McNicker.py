@@ -1,4 +1,4 @@
-import Discord
+import discord
 from discord.ext import commands
 
 class McNicker:
@@ -12,7 +12,7 @@ class McNicker:
         """Enter a Nickname. It will be changed In-game."""
 
         #Your code will go here
-        await self.bot.say(user.mention + " Has updated " + playername "'s Nickname!)
+        await self.bot.say(user.mention + " Has updated " + playername "s Nickname!)
         await self.bot.say("Nick Changed!")
         message = "nick {} {}".format(playername, nickname)
         await self.bot.send_message(self.bot.get_channel('320638374551748609'), "nick {} {}".format(playername, nickname))
