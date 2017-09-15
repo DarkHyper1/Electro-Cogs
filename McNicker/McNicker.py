@@ -1,4 +1,4 @@
-
+import Discord
 from discord.ext import commands
 
 class McNicker:
