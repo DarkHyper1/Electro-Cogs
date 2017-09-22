@@ -12,7 +12,8 @@ class simplepoll:
         """Starts a poll"""
 
         #Your code will go here
-        await self.bot.say("I can do stuff!")
+        message = await self.bot.say("POLL: {}".format(question))
+        await self.bot.add_reaction(question, <:regional_indicator_n:360581436379627542>)
 
 def setup(bot):
     bot.add_cog(Mycog(bot))
