@@ -26,7 +26,7 @@ class simplepoll:
         reaction2 = discord.utils.get(message.reactions, emoji="\N{REGIONAL INDICATOR SYMBOL LETTER Y}")
         react1count = discord.Reaction.count(reaction)
         react2count = discord.Reaction.count(reaction2)
-        if (reaction1 > reaction2):
+        if (react1count > react2count):
             await self.bot.say("The Poll has ended! The users have chosen NO!")
         else:
             await self.bot.say("The Poll has ended! The users have chosen YES!")
