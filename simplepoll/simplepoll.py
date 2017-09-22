@@ -13,7 +13,7 @@ class simplepoll:
 
         #Your code will go here
         message = await self.bot.say("POLL: {}".format(question))
-        await self.bot.add_reaction(question, <:regional_indicator_n:360581436379627542>)
+        await self.bot.add_reaction(question,'<:regional_indicator_n:360581436379627542>')
 
 def setup(bot):
     bot.add_cog(simplepoll(bot))
