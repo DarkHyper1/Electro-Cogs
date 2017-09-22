@@ -22,10 +22,8 @@ class simplepoll:
         #les do this
         channel = ctx.message.channel
         message = await self.bot.get_message(channel, pollid)
-        reaction = discord.utils.get(message.reactions, emoji="\N{REGIONAL INDICATOR SYMBOL LETTER N}")
-        reaction2 = discord.utils.get(message.reactions, emoji="\N{REGIONAL INDICATOR SYMBOL LETTER Y}")
-        react1count = discord.Reaction.count(message)
-        react2count = 2
+        reaction = discord.Message.reaction(message)
+        reactcount = discord.Reaction.count(reaction)
         if (react1count > react2count):
             await self.bot.say("The Poll has ended! The users have chosen NO!")
         else:
