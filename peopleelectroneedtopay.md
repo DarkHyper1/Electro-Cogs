@@ -1,4 +1,4 @@
-# People That Need to be Payed by Electro
+# People That Need to be Paid by Electro
 this is a list of peopl that Electro was annoying to, and therefore need to be compensated.
 
 JennJenn
