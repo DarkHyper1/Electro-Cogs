@@ -20,7 +20,7 @@ class simplepoll:
     async def endpoll(self, pollid):
         """Ends a poll"""
         #les do this
-        message = await bot.get_message(pollid)
+        message = await self.bot.get_message(pollid)
         reaction = discord.utils.get(message.reactions, emoji="\N{REGIONAL INDICATOR SYMBOL LETTER N}")
         reaction2 = discord.utils.get(message.reactions, emoji="\N{REGIONAL INDICATOR SYMBOL LETTER Y}")
         react1count = self.reaction.count(reaction)
