@@ -23,6 +23,9 @@ class simplepoll:
         channel = ctx.message.channel
         message = await self.bot.get_message(channel, pollid)
         reactions = [x.count for x in message.reactions]
+        if reactions[0] = reactions[1]:
+            await self.bot.say("The answers cannot be the same! Wait a little longer")
+            break
         if reactions[0] > reactions[1]:
             await self.bot.say("The Poll has ended! The users have chosen NO!")
         else:
