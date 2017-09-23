@@ -25,7 +25,6 @@ class simplepoll:
         reactions = [x.count for x in message.reactions]
         if reactions[0] == reactions[1]:
             await self.bot.say("The answers cannot be the same! Wait a little longer")
-            return true
         if reactions[0] > reactions[1]:
             await self.bot.say("The Poll has ended! The users have chosen NO!")
         else:
