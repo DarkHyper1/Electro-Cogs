@@ -28,7 +28,7 @@ class simplepoll:
             return true
         if reactions[0] > reactions[1]:
             await self.bot.say("The Poll has ended! The users have chosen NO!")
-        else if:
+        else:
             await self.bot.say("The Poll has ended! The users have chosen YES!")
 
 
