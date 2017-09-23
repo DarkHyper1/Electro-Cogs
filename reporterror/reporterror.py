@@ -12,15 +12,18 @@ class reporterror:
         
     @checks.mod()
     @commands.command(pass_context=True)
-    async def reporterror(self, ctx, *, errormessage):
+    async def senderror(self, ctx, *, errormessage):
         """This does stuff!"""
         client = Client('')
         channel = ctx.message.channel
         sender = ctx.message.author.display_name
         server = ctx.message.server.name
+        strchannel = str(channel)
+        strsender = str(sender)
+        strserver = str(server)
         #Your code will go here
         await self.bot.say("Processing Report")
-        client.captureMessage("User " + sender + " Has sent an error from the server " + server + ", in the channel " + channel + ". Their message: " + errormessage)
+        client.captureMessage("User " + strsender + " Has sent an error from the server " + strserver + ", in the channel " + strchannel + ". Their message: " + errormessage)
         await self.bot.say("Message Sent!")
 
 def setup(bot):
