@@ -4,7 +4,6 @@ this is a list of peopl that Electro was annoying to, and therefore need to be c
 JennJenn
 Yukirin
 Redjumpman
-UltimatePancake
 Fluffin'
 Twentysix (currently recieving $2.50 a month)
 Helpful Cat Man
