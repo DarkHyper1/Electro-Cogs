@@ -8,14 +8,13 @@ class simplepoll:
         self.bot = bot
 
     @commands.command()
-    async def startpoll(self, *, question, channel):
+    async def startpoll(self, *, question):
         """Starts a poll"""
 
         # Your code will go here
-        message = await self.bot.send_message(self.bot.get_channel(channel), question)
+        message = await self.bot.say("POLL: {}".format(question))
         await self.bot.add_reaction(message, "\N{REGIONAL INDICATOR SYMBOL LETTER N}")
         await self.bot.add_reaction(message, "\N{REGIONAL INDICATOR SYMBOL LETTER Y}")
-        
 
     @commands.command(pass_context=True)
     async def endpoll(self, ctx, pollid):
