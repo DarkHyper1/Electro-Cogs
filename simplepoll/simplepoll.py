@@ -11,7 +11,7 @@ class simplepoll:
     async def startpoll(self, *, question):
         """Starts a poll"""
 
-        # Your code will go here
+
         message = await self.bot.say("POLL: {}".format(question))
         await self.bot.add_reaction(message, "\N{REGIONAL INDICATOR SYMBOL LETTER N}")
         await self.bot.add_reaction(message, "\N{REGIONAL INDICATOR SYMBOL LETTER Y}")
@@ -19,7 +19,8 @@ class simplepoll:
     @commands.command(pass_context=True)
     async def endpoll(self, ctx, pollid):
         """Ends a poll"""
-        # les do this
+        
+        
         channel = ctx.message.channel
         message = await self.bot.get_message(channel, pollid)
         reactions = [x.count for x in message.reactions]
