@@ -1,5 +1,5 @@
 # People That Need to be Paid by Electro
-#### This is a list of people that Electro annoyed or scammed, and therefore need to be compensated.
+#### This is a list of people that Electro has annoyed or scammed, and therefore need to be compensated.
 
 - JennJenn
 - Yukirin
