@@ -11,7 +11,7 @@ class McNicker:
     async def McNick(self, ctx, playername, nickname):
         """Enter a Nickname. It will be changed In-game."""
 
-        #Your code will go here
+
         author = ctx.message.author
         await self.bot.say(ctx.message.author.mention + " Has updated " + playername + "s Nickname!")
         await self.bot.say("Nick Changed!")
