@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 class McNicker:
-    """My custom cog that does stuff!"""
+    """Change your Minecraft nickname!"""
 
     def __init__(self, bot):
         self.bot = bot
