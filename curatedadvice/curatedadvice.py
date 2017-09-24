@@ -16,7 +16,7 @@ class Advice:
         """Grab The Newest Advice"""
 
 
-        #Your code will go here
+
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
@@ -33,7 +33,7 @@ class Advice:
         """Submit advice for admins to review. NO LINKS PLEASE"""
         
         
-        
+         
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
@@ -50,7 +50,7 @@ class Advice:
         """An Admin Command to grab all memes and IDs to remove them"""
         
         
-        
+         
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
@@ -67,6 +67,8 @@ class Advice:
     async def deletadvice(self, id):
         """Delete a meme based on ID"""
         
+        
+        
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
@@ -82,8 +84,9 @@ class Advice:
     @checks.admin()
     async def editadviceid(self, oldid, newid):
         """Change the ID of a Meme to make it first"""
-        
-        
+
+
+
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your usernam
                      passwd="DankMemes",  # your passwor
@@ -99,6 +102,8 @@ class Advice:
     @checks.admin()
     async def approveadvice(self, approveid):
         """Approve Advice From The Table (Run [p]graballunapprovedadvice to get submitted ids"""
+    
+    
     
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
@@ -119,7 +124,7 @@ class Advice:
         """An Admin Command to grab all unaprroved advice"""
         
         
-        
+         
         db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
