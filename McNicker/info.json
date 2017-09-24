@@ -1,7 +1,7 @@
 
 {
     "AUTHOR" : "Electromaster",
-    "DESCRIPTION" : "Allows changing your nickname.",
+    "DESCRIPTION" : "Allows changing your nickname on Minecraft.",
     "DISABLED" : false,
     "SHORT" : "Allows changing your Nickname on Minecraft",
     "NAME" : "McNicker",
