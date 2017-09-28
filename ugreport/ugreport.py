@@ -13,7 +13,8 @@ class UGReport:
 
 
         
-        author = ctx.message.author
+        authorobj = ctx.message.author
+        author = str(authorobj)
         await self.bot.say("Your report againist " + player + " Has been created.")
         await self.bot.send_message(self.bot.get_channel('361734544971268109'), "A Report has been filed! \n User: " + player + "\n Reason: " + reason + "\n Reported by: " + author)
 
