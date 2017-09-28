@@ -15,7 +15,7 @@ class UGReport:
         
         
         await self.bot.say("Your report againist " + player + " Has been created.")
-        await self.bot.send_message(self.bot.get_channel('361734544971268109'), "A Report has been filed! \n User: " + player "\n Reason: " + reason)
+        await self.bot.send_message(self.bot.get_channel('361734544971268109'), "A Report has been filed! \n User: " + player + "\n Reason: " + reason)
 
 def setup(bot):
     bot.add_cog(UGReport(bot))
