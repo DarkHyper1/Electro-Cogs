@@ -15,8 +15,15 @@ class UGReport:
         
         authorobj = ctx.message.author
         author = str(authorobj)
+        embed=discord.Embed(title="Report:", description="A Report has been filed!")
+        embed.set_author(name="DJ ElectroBOT Report System")
+        embed.add_field(name="User:", value=player, inline=False)
+        embed.add_field(name="Reason:", value=reason, inline=False)
+        embed.add_field(name="Reported By:", value=author, inline=True)
+        embed.set_footer(text="Created with love by DJ Electro")
         await self.bot.say("Your report againist " + player + " Has been created.")
-        await self.bot.send_message(self.bot.get_channel('361734544971268109'), "A Report has been filed! \n User: " + player + "\n Reason: " + reason + "\n Reported by: " + author)
+        await self.bot.send_message(self.bot.get_channel('361734544971268109'), embed=embed)
+        
 
 def setup(bot):
     bot.add_cog(UGReport(bot))
