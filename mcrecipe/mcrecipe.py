@@ -34,7 +34,7 @@ class mcrecipe:
     async def addrecipe(self, item, piclink):
         """Adds a recipe"""
         
-         db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
+        db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
