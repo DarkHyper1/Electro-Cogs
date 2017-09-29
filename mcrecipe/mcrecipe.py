@@ -39,7 +39,7 @@ class mcrecipe:
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
         cur = db.cursor()
-        cur.execute("INSERT INTO recipes {item,itemlink} VALUES (\"{}\", \"{}\")".format(item, piclink))        
+        cur.execute("INSERT INTO recipes {item,itemlink} VALUES (\"{}\", \"{}\");".format(item, piclink))        
         db.commit()
         await self.bot.say("Added")
         db.close()
