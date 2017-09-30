@@ -20,7 +20,7 @@ class mcrecipe:
 
 
         
-        db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
