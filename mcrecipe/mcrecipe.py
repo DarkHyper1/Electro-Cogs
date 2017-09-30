@@ -72,7 +72,7 @@ class mcrecipe:
                        passwd="DankMemes",  # your password
                        db="electrom_dankmemes")
         cur = db.cursor()
-        cur.execute("SELECT piclink from recipes WHERE item = \"" + item + "\";")
+        cur.execute("SELECT itemlink from recipes WHERE item = \"" + item + "\";")
         output = cur.fetchall()
         outputstr = str(output) [3:-5]
         embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
