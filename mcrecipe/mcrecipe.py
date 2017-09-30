@@ -15,7 +15,7 @@ class mcrecipe:
    
 
     @commands.command(pass_context=True)
-    async def getrecipe(self, ctx, item):
+    async def tempgetrecipe(self, ctx, item):
         """Send a recipe in chat"""
 
 
@@ -23,7 +23,7 @@ class mcrecipe:
         authorobj = ctx.message.author.mention
         author = str(authorobj)
         
-        if "armor" in item or "sword" in item:
+        if "helmet" in item or "sword" in item or "chestplate" in item or "leggings" in item or "boots" in item:
             itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".gif"
             embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
             embed.set_author(name="DJ ElectroBOT")
@@ -43,5 +43,20 @@ class mcrecipe:
             await self.bot.say(embed=embed)
             await self.bot.say(itemfull)
    
+
+    @commands.command()
+    async def addrecipe(self, item, piclink):
+          """Adds a recipe"""
+         
+        db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
+                       user="electrom_dankmemesuser",         # your username
+                       passwd="DankMemes",  # your password
+                       db="electrom_dankmemes")
+        cur = db.cursor()
+        cur.execute("INSERT INTO recipes {item,itemlink}" + " VALUES (\"{}\", \"{}\");".format(item, piclink))        
+        db.commit()
+        await self.bot.say("Added")
+        db.close()
+          
 def setup(bot):
     bot.add_cog(mcrecipe(bot))
