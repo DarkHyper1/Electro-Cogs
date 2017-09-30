@@ -11,7 +11,7 @@ class halflife:
     async def halflife(self):
         """Punish a User for Saying Half-Life"""
         
-        #Your code will go here
+         
         self.number = self.number + 1
         await self.bot.say("You have mentioned Half-Life 3 or a game set in the Half-Life Universe, and as such have delayed the game by a year.")
         await self.bot.say("The game will now be released on January 18, {}".format(self.number))

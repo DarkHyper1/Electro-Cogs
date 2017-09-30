@@ -19,8 +19,8 @@ class dankmemes:
         """Grab The Newest Dank Meme!"""
 
 
-        #Your code will go here
-        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
@@ -36,8 +36,8 @@ class dankmemes:
         """Submit memes. Or Dank ones."""
         
         
-        
-        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+         
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
@@ -53,8 +53,8 @@ class dankmemes:
         """An Admin Command to grab all memes and IDs to remove them"""
         
         
-        
-        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+         
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
@@ -70,7 +70,9 @@ class dankmemes:
     async def deletememe(self, id):
         """Delete a meme based on ID"""
         
-        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+        
+         
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")
@@ -87,7 +89,8 @@ class dankmemes:
         """Change the ID of a Meme to make it first"""
         
         
-        db = MySQLdb.connect(host="theendlessweb.com",    # your host, usually localhost
+         
+        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
                      user="electrom_dankmemesuser",         # your username
                      passwd="DankMemes",  # your password
                      db="electrom_dankmemes")

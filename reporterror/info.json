@@ -1,8 +1,9 @@
 {
     "AUTHOR" : "Electromaster",
-    "DESCRIPTION" : "Start simple polls",
+    "DESCRIPTION" : "Allows you to send your errors to Electromoaster",
     "DISABLED" : false,
-    "SHORT" : "Start simple polls",
-    "NAME" : "simplepoll",
+    "SHORT" : "Allows you to send your errors to Electromoaster",
+    "NAME" : "reporterror",
     "INSTALL_MSG" : "Hey! \n It seems you have installed a cog of mine! First off, thanks! \n If you run into troubles with these, please contact me on the Red Cog Support Server - https://discord.gg/GET4DVk \n Thanks! - Electromaster#8890"
+    "REQUIREMENTS": ["raven"]
 }
