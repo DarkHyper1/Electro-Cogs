@@ -20,7 +20,7 @@ class mcrecipe:
 
 
         
-        authorobj = ctx.message.mention
+        authorobj = ctx.author.mention
         author = str(authorobj)
         itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".png"
         embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
