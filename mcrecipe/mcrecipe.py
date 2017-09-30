@@ -20,7 +20,7 @@ class mcrecipe:
 
 
         
-        authorobj = ctx.author.mention
+        authorobj = ctx.message.author.mention
         author = str(authorobj)
         
         if "armor" in item or "sword" in item:
