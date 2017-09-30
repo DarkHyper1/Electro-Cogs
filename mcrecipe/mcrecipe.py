@@ -46,7 +46,7 @@ class mcrecipe:
 
     @commands.command()
     async def addrecipe(self, item, piclink):
-          """Adds a recipe"""
+        """Adds a recipe"""
          
         db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
                        user="electrom_dankmemesuser",         # your username
