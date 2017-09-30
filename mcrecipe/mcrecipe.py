@@ -57,6 +57,31 @@ class mcrecipe:
         db.commit()
         await self.bot.say("Added")
         db.close()
+      
+    
+    @commands.command(pass_context=True)
+    async def getrecipe(self, ctx, item):
+        """Get a recipe"""
+        
+        
+        
+        authorobj = ctx.message.author.mention
+        author = str(authorobj)
+        db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
+                       user="electrom_dankmemesuser",         # your username
+                       passwd="DankMemes",  # your password
+                       db="electrom_dankmemes")
+        cur = db.cursor()
+        cur.execute("SELECT piclink from recipes ORDER BY id desc WHERE item = " + item + ";")
+        output = cur.fetchall()
+        outputstr = str(output) [3:-5]
+        embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
+        embed.set_author(name="DJ ElectroBOT")
+        embed.add_field(name="User:", value=author, inline=False)
+        embed.add_field(name="Recipe:", value=outputstr, inline=False)     
+        embed.set_footer(text="Made with love by DJ Electro")
+        await self.bot.say(embed=embed)
+        await self.bot.say(outputstr)
           
 def setup(bot):
     bot.add_cog(mcrecipe(bot))
