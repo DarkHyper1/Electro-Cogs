@@ -31,6 +31,7 @@ class mcrecipe:
             embed.add_field(name="Recipe:", value=itemfull, inline=False)     
             embed.set_footer(text="Made with love by DJ Electro")
             await self.bot.say(embed=embed)
+            await self.bot.say(itemfull)
             
         else:    
             itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".png"
@@ -40,6 +41,7 @@ class mcrecipe:
             embed.add_field(name="Recipe:", value=itemfull, inline=False)     
             embed.set_footer(text="Made with love by DJ Electro")
             await self.bot.say(embed=embed)
+            await self.bot.say(itemfull)
    
 def setup(bot):
     bot.add_cog(mcrecipe(bot))
