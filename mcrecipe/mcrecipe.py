@@ -20,30 +20,15 @@ class mcrecipe:
 
 
         
-        db = MySQLdb.connect(host="firenetwork.ga",    # your host, usually localhost
-                     user="electrom_dankmemesuser",         # your username
-                     passwd="DankMemes",  # your password
-                     db="electrom_dankmemes")
-        cur = db.cursor()
-      
-        db.close()
-        
-        
-        
-    @commands.command()
-    async def addrecipe(self, item, piclink):
-        """Adds a recipe"""
-        
-        db = MySQLdb.connect(host="mysql.theendlessweb.com",    # your host, usually localhost
-                     user="electrom_dankmemesuser",         # your username
-                     passwd="DankMemes",  # your password
-                     db="electrom_dankmemes")
-        cur = db.cursor()
-        cur.execute("INSERT INTO recipes {item,itemlink}" + " VALUES (\"{}\", \"{}\");".format(item, piclink))        
-        db.commit()
-        await self.bot.say("Added")
-        db.close()
-        
+        authorobj = ctx.message.mention
+        author = str(authorobj)
+        itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".png"
+        embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
+        embed.set_author(name="DJ ElectroBOT")
+        embed.add_field(name="User:", value=author, inline=False)
+        embed.add_field(name="Recipe:", value=itemfull, inline=False)     
+        embed.set_footer(text="Made with love by DJ Electro")
+        await self.bot.say(embed=embed)
    
 def setup(bot):
     bot.add_cog(mcrecipe(bot))
