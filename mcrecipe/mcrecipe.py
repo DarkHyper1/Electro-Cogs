@@ -22,6 +22,7 @@ class mcrecipe:
         
         authorobj = ctx.author.mention
         author = str(authorobj)
+        
         if "armor" in item or "sword" in item:
             itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".gif"
             embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
@@ -31,14 +32,14 @@ class mcrecipe:
             embed.set_footer(text="Made with love by DJ Electro")
             await self.bot.say(embed=embed)
             
-            
-        itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".png"
-        embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
-        embed.set_author(name="DJ ElectroBOT")
-        embed.add_field(name="User:", value=author, inline=False)
-        embed.add_field(name="Recipe:", value=itemfull, inline=False)     
-        embed.set_footer(text="Made with love by DJ Electro")
-        await self.bot.say(embed=embed)
+        else:    
+            itemfull = "http://www.minecraftcrafting.info/imgs/craft_" + item + ".png"
+            embed=discord.Embed(title="Recipe", description="Your Requested Recipe", color=0xce0000)
+            embed.set_author(name="DJ ElectroBOT")
+            embed.add_field(name="User:", value=author, inline=False)
+            embed.add_field(name="Recipe:", value=itemfull, inline=False)     
+            embed.set_footer(text="Made with love by DJ Electro")
+            await self.bot.say(embed=embed)
    
 def setup(bot):
     bot.add_cog(mcrecipe(bot))
