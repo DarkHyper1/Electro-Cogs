@@ -14,19 +14,18 @@ class RadioHaru:
     
     @commands.group(pass_context=True, no_pm=True)
     async def radioelectro(self, ctx):
-        """Radio Haru"""
+        """"""
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
-            await self.bot.say("https://radioharu.pw/")
-
+            
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def play(self, ctx):
-        """Play Radio Haru"""
+        """Play Radio Electro"""
         server = ctx.message.server
         author = ctx.message.author
         if self.voice_connected(server):
-            await self.bot.say("Already connected to a voice channel, use `{}radioharu stop` to change radio.".format(ctx.prefix))
+            await self.bot.say("Already connected to a voice channel, use `{}radioelectro stop` to change radio.".format(ctx.prefix))
         else:
             voice_channel = author.voice_channel
             voice = await self.bot.join_voice_channel(voice_channel)
@@ -35,7 +34,7 @@ class RadioHaru:
             await asyncio.sleep(7)
             player = voice.create_ffmpeg_player('https://stream.radioharu.pw/owo', use_avconv=self.use_avconv)
             player.start()
-            await self.bot.say(":green_heart: **Playing Radio Haru!**")
+            await self.bot.say(":green_heart: **Playing Radio Electro!**")
             
    
     @radioelectro.command(pass_context=True, no_pm=True)
