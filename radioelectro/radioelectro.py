@@ -1,4 +1,4 @@
-# This cog is a modified version of Radio Haru by Mr. Boo Grande
+# This cog is a modified version of Radio Haru by Mr Boo Grande
 import discord
 from discord.ext import commands
 from cogs.utils import checks
@@ -6,7 +6,7 @@ from __main__ import send_cmd_help
 import asyncio
 
 class RadioHaru:
-    """Radio Haru - www.RadioHaru.pw"""
+    """RADIO!"""
 
     def __init__(self, bot):
         self.bot = bot
