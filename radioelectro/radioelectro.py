@@ -32,7 +32,7 @@ class RadioHaru:
             Channel = ctx.message.channel
             await self.bot.send_typing(Channel)   
             await asyncio.sleep(7)
-            player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8080/stream', use_avconv=self.use_avconv)
+            player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
             player.start()
             await self.bot.say(":green_heart: **Playing Radio Electro!**")
             
