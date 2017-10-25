@@ -10,6 +10,7 @@ class RadioHaru:
 
     def __init__(self, bot):
         self.bot = bot
+        self.use_avconv = self.bot.get_cog("Audio").settings["AVCONV"]
     
     @commands.group(pass_context=True, no_pm=True)
     async def radioelectro(self, ctx):
@@ -30,12 +31,9 @@ class RadioHaru:
             voice_channel = author.voice_channel
             voice = await self.bot.join_voice_channel(voice_channel)
             Channel = ctx.message.channel
-            await self.bot.send_typing(Channel)
-            player = voice.create_ffmpeg_player('https://cdn.discordapp.com/attachments/336598653923753987/360413654224601089/Radio-Haru.ogg')
-            player.start()
+            await self.bot.send_typing(Channel)   
             await asyncio.sleep(7)
-            player.stop()
-            player = voice.create_ffmpeg_player('https://stream.radioharu.pw/owo')
+            player = voice.create_ffmpeg_player('https://stream.radioharu.pw/owo', use_avconv=self.use_avconv)
             player.start()
             await self.bot.say(":green_heart: **Playing Radio Haru!**")
             
