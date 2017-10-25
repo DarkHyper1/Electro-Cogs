@@ -46,8 +46,6 @@ class RadioHaru:
         await self._disconnect_voice_client(server)
         voice_channel = author.voice_channel
         voice = await self.bot.join_voice_channel(voice_channel)
-        player = voice.create_ffmpeg_player('https://cdn.discordapp.com/attachments/336598653923753987/360425539309142037/radioharu_goodbye.mp3')
-        player.start()
         await asyncio.sleep(1)
         await self._disconnect_voice_client(server)
         await self.bot.say(":red_circle: **Stopped playing Radio!**")
