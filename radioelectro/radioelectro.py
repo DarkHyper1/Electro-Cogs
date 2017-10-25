@@ -18,7 +18,7 @@ class RadioHaru:
             await send_cmd_help(ctx)
             await self.bot.say("https://theendlessweb.com")
 
-    @radioharu.command(pass_context=True, no_pm=True)
+    @electroradio.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def play(self, ctx):
         """StartElectroRadio"""
@@ -38,7 +38,7 @@ class RadioHaru:
             player.start()
             await self.bot.say(":green_heart: **Here we go! Joining Voice!**")
             
-    @radioharu.command(pass_context=True, no_pm=True)
+    @electroradio.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def playwin(self, ctx):
         """Play Radio Haru - Use instead of play command if on a Windows machine."""
@@ -65,7 +65,7 @@ class RadioHaru:
                 await asyncio.sleep(300)
                 await self._disconnect_voice_client(server)
 
-    @radioharu.command(pass_context=True, no_pm=True)
+    @electroradio.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def stop(self, ctx):
         """Say goodbye to your radio :("""
