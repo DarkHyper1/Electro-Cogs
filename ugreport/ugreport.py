@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 from .utils.dataIO import dataIO
 from .utils import checks
@@ -92,4 +93,6 @@ def check_files():
             dataIO.save_json('data/ugreport/{}'.format(filename), value)
 
 def setup(bot):
+    check_folders()
+    check_files()
     bot.add_cog(UGReport(bot))
