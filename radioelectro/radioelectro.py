@@ -5,7 +5,7 @@ from cogs.utils import checks
 from __main__ import send_cmd_help
 import asyncio
 
-class RadioHaru:
+class RadioElectro:
     """ElectroRadio"""
 
     def __init__(self, bot):
@@ -30,8 +30,7 @@ class RadioHaru:
             voice_channel = author.voice_channel
             voice = await self.bot.join_voice_channel(voice_channel)
             Channel = ctx.message.channel
-            await self.bot.send_typing(Channel)   
-            await asyncio.sleep(7)
+            await self.bot.send_typing(Channel)
             player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
             player.start()
             await self.bot.say(":green_heart: **Playing Radio Electro!**")
@@ -40,15 +39,11 @@ class RadioHaru:
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def stop(self, ctx):
-        """Stop Radio Haru"""
+        """Stop Radio Electro"""
         server = ctx.message.server
         author = ctx.message.author
         await self._disconnect_voice_client(server)
-        voice_channel = author.voice_channel
-        voice = await self.bot.join_voice_channel(voice_channel)
-        await asyncio.sleep(1)
-        await self._disconnect_voice_client(server)
-        await self.bot.say(":red_circle: **Stopped playing Radio!**")
+        await self.bot.say(":red_circle: **Stopped playing Radio Electro!**")
         
         
     def voice_client(self, server):
@@ -68,4 +63,4 @@ class RadioHaru:
         await voice_client.disconnect()
 
 def setup(bot):
-    bot.add_cog(RadioHaru(bot))
+    bot.add_cog(RadioElectro(bot))
