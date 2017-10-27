@@ -42,6 +42,7 @@ class RadioElectro:
                 player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
                 player.start()
                 await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
+                await asyncio.sleep(1000)
             except InvalidArgument:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
            
