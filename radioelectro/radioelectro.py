@@ -33,6 +33,7 @@ class RadioElectro:
             await self.bot.say("Already connected to a voice channel, use `{}radioelectro stop` to change radio.".format(ctx.prefix))
         else:
             try:
+                while True:
                 voice = await self.bot.join_voice_channel(voice_channel)
                 Channel = ctx.message.channel
                 await self.bot.send_typing(Channel)
@@ -41,10 +42,14 @@ class RadioElectro:
                 await self.bot.say("Opening connection to server -- This can take a bit!")
                 await asyncio.sleep(15)
                 player.stop()
-                player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
-                player.start()
+                await self._disonnect_voice_client(server)
                 await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
-                await asyncio.sleep(1000)
+                while True:
+                    voice = await self.bot.join_voice_channel(voice_channel)
+                    player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
+                    player.start()
+                    await asyncio.sleep(300)
+                    await self._disonnect_voice_client(server)
             except:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
    
