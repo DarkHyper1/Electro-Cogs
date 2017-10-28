@@ -61,9 +61,9 @@ class RadioElectro:
     async def nowplaying(self):
         """Get Now Playing Song"""
         ip = IcyParser()
-        url = "http://play.theendlessweb.com:8000/stream"
+        url = 'http://play.theendlessweb.com:8000/stream'
         ip.getIcyInformation(url)
-        await self.bot.say(ip.icy_streamtitle)
+        print(ip.icy_streamtitle)
     
         
     @radioelectro.command(pass_context=True, no_pm=True)
