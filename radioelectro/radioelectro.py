@@ -4,8 +4,7 @@ from discord.ext import commands
 from cogs.utils import checks
 from __main__ import send_cmd_help
 import asyncio
-from streamscrobbler import streamscrobbler
-streamscrobbler = streamscrobbler()
+from icyparser import IcyParser
 
 
 
@@ -61,12 +60,11 @@ class RadioElectro:
     @radioelectro.command()
     async def nowplaying(self):
         """Get Now Playing Song"""
-       ##streamurl can be a url directly to the stream or to a pls file. Support for m3u is coming soon.
-        streamurl = "http://play.theendlessweb.com:8000/stream"
-        stationinfo = streamscrobbler.getServerInfo(streamurl)
-        ##metadata is the bitrate and current song
-        metadata = stationinfo.get("metadata")
-        await self.bot.say(metadata)
+        ip = IcyParser()
+        url = "http://play.theendlessweb.com:8000/stream"
+        ip.getIcyInformation(url)
+        await self.bot.say(ip.icy_streamtitle)
+    
         
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
