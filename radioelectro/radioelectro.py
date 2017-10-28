@@ -62,7 +62,7 @@ class RadioElectro:
         request = urllib2.Request(stream_url)
         try:
             request.add_header('Icy-MetaData', 1)
-            response = urllib2.urlopen(request)
+            response = urlopen(request)
             icy_metaint_header = response.headers.get('icy-metaint')
             if icy_metaint_header is not None:
                 metaint = int(icy_metaint_header)
