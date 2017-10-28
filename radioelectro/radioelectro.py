@@ -33,7 +33,6 @@ class RadioElectro:
             await self.bot.say("Already connected to a voice channel, use `{}radioelectro stop` to change radio.".format(ctx.prefix))
         else:
             try:
-                while True:
                 voice = await self.bot.join_voice_channel(voice_channel)
                 Channel = ctx.message.channel
                 await self.bot.send_typing(Channel)
