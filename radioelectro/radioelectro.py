@@ -18,7 +18,6 @@ class RadioElectro:
         if ctx.invoked_subcommand is None:
             await send_cmd_help(ctx)
             
-
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
     async def play(self, ctx, voice_channel: discord.Channel=None):
@@ -45,7 +44,6 @@ class RadioElectro:
                 await asyncio.sleep(1000)
             except InvalidArgument:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
-           
    
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
@@ -61,7 +59,6 @@ class RadioElectro:
     async def restart(self, ctx):
         """Restart if your bot has issues, useful for scheduler"""
         server = ctx.message.server
-        author = ctx.message.author
         voice_channel = author.voice_channel
         if not self.voice_connected(server):
             await self.bot.say("Not in a voice channel, please use `{}radioelectro play` to play radio.".format(ctx.prefix))
@@ -71,9 +68,7 @@ class RadioElectro:
             player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
             player.start()
             await asyncio.sleep(1000)
-        
-    
-        
+            
     def voice_client(self, server):
         return self.bot.voice_client_in(server)
 
