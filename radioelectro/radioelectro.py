@@ -69,7 +69,7 @@ class RadioElectro:
                 read_buffer = metaint+255
                 content = response.read(read_buffer)
                 title = content[metaint:].split("'")[1]
-                print title
+                await self.bot.say(title)
         except:
             await self.bot.say("There was an error! Check your console!")
         
