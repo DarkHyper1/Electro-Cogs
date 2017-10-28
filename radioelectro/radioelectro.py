@@ -49,7 +49,7 @@ class RadioElectro:
                     player.start()
                     await asyncio.sleep(300)
                     await self._disonnect_voice_client(server)
-            except:
+            except InvokeError:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
    
     @radioelectro.command(pass_context=True, no_pm=True)
