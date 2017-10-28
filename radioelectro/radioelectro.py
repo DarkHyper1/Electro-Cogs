@@ -71,20 +71,6 @@ class RadioElectro:
         ip.stop()
     
         
-    @radioelectro.command(pass_context=True, no_pm=True)
-    @checks.serverowner_or_permissions(manage_server=True)
-    async def restart(self, ctx):
-        """Restart if your bot has issues, useful for scheduler"""
-        server = ctx.message.server
-        voice_channel = author.voice_channel
-        if not self.voice_connected(server):
-            await self.bot.say("Not in a voice channel, please use `{}radioelectro play` to play radio.".format(ctx.prefix))
-        else:
-            await self._disconnect_voice_client(server)
-            voice = await self.bot.join_voice_channel(voice_channel)
-            player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
-            player.start()
-            await asyncio.sleep(1000)
             
     def voice_client(self, server):
         return self.bot.voice_client_in(server)
