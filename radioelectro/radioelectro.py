@@ -4,7 +4,7 @@ from discord.ext import commands
 from cogs.utils import checks
 from __main__ import send_cmd_help
 import asyncio
-import urllib2
+from urllib.request import urlopen
 
 class RadioElectro:
     """Radio Electro :)"""
