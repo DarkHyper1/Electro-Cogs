@@ -71,7 +71,7 @@ class RadioElectro:
                 title = content[metaint:].split("'")[1]
                 print title
         except:
-            print 'Error'
+            await self.bot.say("There was an error! Check your console!")
         
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
