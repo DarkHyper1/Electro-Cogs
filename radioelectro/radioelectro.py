@@ -4,6 +4,7 @@ from discord.ext import commands
 from cogs.utils import checks
 from __main__ import send_cmd_help
 import asyncio
+import urllib2
 
 class RadioElectro:
     """Radio Electro :)"""
@@ -53,6 +54,24 @@ class RadioElectro:
         author = ctx.message.author
         await self._disconnect_voice_client(server)
         await self.bot.say(":red_circle: **Stopped playing Radio!**")
+        
+    @radioelectro.command()
+    async def nowplaying(self):
+        """Get Now Playing Song"""
+        stream_url = 'http://play.theendlessweb.com:8000/stream'
+        request = urllib2.Request(stream_url)
+        try:
+            request.add_header('Icy-MetaData', 1)
+            response = urllib2.urlopen(request)
+            icy_metaint_header = response.headers.get('icy-metaint')
+            if icy_metaint_header is not None:
+                metaint = int(icy_metaint_header)
+                read_buffer = metaint+255
+                content = response.read(read_buffer)
+                title = content[metaint:].split("'")[1]
+                print title
+        except:
+            print 'Error'
         
     @radioelectro.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(manage_server=True)
