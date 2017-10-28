@@ -59,7 +59,7 @@ class RadioElectro:
     async def nowplaying(self):
         """Get Now Playing Song"""
         stream_url = 'http://play.theendlessweb.com:8000/stream'
-        request = urllib2.Request(stream_url)
+        request = urllib.Request(stream_url)
         try:
             request.add_header('Icy-MetaData', 1)
             response = urlopen(request)
