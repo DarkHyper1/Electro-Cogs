@@ -62,7 +62,7 @@ class RadioElectro:
         """Get Now Playing Song"""
         ip = IcyParser()
         ip.getIcyInformation("http://play.theendlessweb.com:8000/stream")
-        await asyncio.sleep(15)
+        await asyncio.sleep(5)
         await self.bot.say(ip.icy_streamtitle)
     
         
