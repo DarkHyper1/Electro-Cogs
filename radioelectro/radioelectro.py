@@ -61,6 +61,7 @@ class RadioElectro:
     async def restart(self, ctx):
         """Restart if your bot has issues, useful for scheduler"""
         server = ctx.message.server
+        author = ctx.message.author
         voice_channel = author.voice_channel
         if not self.voice_connected(server):
             await self.bot.say("Not in a voice channel, please use `{}radioelectro play` to play radio.".format(ctx.prefix))
