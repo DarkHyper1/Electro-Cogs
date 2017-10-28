@@ -45,7 +45,7 @@ class RadioElectro:
                 player.start()
                 await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
                 await asyncio.sleep(1000)
-            except InvalidArgument:
+            except:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
    
     @radioelectro.command(pass_context=True, no_pm=True)
@@ -61,9 +61,8 @@ class RadioElectro:
     async def nowplaying(self):
         """Get Now Playing Song"""
         ip = IcyParser()
-        url = 'http://play.theendlessweb.com:8000/stream'
-        ip.getIcyInformation(url)
-        print(ip.icy_streamtitle)
+        ip.getIcyInformation("http://play.theendlessweb.com:8000/stream")
+        await self.bot.say(ip.icy_streamtitle)
     
         
     @radioelectro.command(pass_context=True, no_pm=True)
