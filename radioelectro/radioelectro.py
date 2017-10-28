@@ -41,7 +41,7 @@ class RadioElectro:
                 await self.bot.say("Opening connection to server -- This can take a bit!")
                 await asyncio.sleep(15)
                 player.stop()
-                await self._disonnect_voice_client(server)
+                await self._disconnect_voice_client(server)
                 await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
                 while True:
                     voice = await self.bot.join_voice_channel(voice_channel)
@@ -49,7 +49,7 @@ class RadioElectro:
                     player.start()
                     await asyncio.sleep(300)
                     await self._disonnect_voice_client(server)
-            except InvokeError:
+            except:
                 await self.bot.say("You either didn't enter a voice channel to connect to, or weren't in one!")
    
     @radioelectro.command(pass_context=True, no_pm=True)
@@ -65,6 +65,7 @@ class RadioElectro:
     async def nowplaying(self):
         """Get Now Playing Song"""
         ip = IcyParser()
+        await self.bot.say("Fetching Song Information...")
         ip.getIcyInformation("http://play.theendlessweb.com:8000/stream")
         await asyncio.sleep(5)
         await self.bot.say(ip.icy_streamtitle)
