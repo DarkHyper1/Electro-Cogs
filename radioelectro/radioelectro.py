@@ -64,6 +64,7 @@ class RadioElectro:
         ip.getIcyInformation("http://play.theendlessweb.com:8000/stream")
         await asyncio.sleep(5)
         await self.bot.say(ip.icy_streamtitle)
+        ip.stop()
     
         
     @radioelectro.command(pass_context=True, no_pm=True)
