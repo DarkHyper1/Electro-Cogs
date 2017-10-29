@@ -45,7 +45,7 @@ class RadioElectro:
             await self._disconnect_voice_client(server)
             await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
             self.playing = True
-            while self.playing = True:
+            while self.playing == True:
                 voice = await self.bot.join_voice_channel(voice_channel)
                 player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream.mp3', use_avconv=self.use_avconv)
                 player.start()
