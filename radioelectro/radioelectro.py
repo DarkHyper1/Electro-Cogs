@@ -14,6 +14,7 @@ class RadioElectro:
     def __init__(self, bot):
         self.bot = bot
         self.use_avconv = self.bot.get_cog("Audio").settings["AVCONV"]
+        self.playing = False
     
     @commands.group(pass_context=True, no_pm=True)
     async def radioelectro(self, ctx):
@@ -43,9 +44,10 @@ class RadioElectro:
             player.stop()
             await self._disconnect_voice_client(server)
             await self.bot.say(":green_heart: Starting **RADIO ELECTRO**")
-            while True:
+            self.playing = True
+            while self.playing = True:
                 voice = await self.bot.join_voice_channel(voice_channel)
-                player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream', use_avconv=self.use_avconv)
+                player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream.mp3', use_avconv=self.use_avconv)
                 player.start()
                 await asyncio.sleep(300)
                 await self._disconnect_voice_client(server)
@@ -58,13 +60,14 @@ class RadioElectro:
         author = ctx.message.author
         await self._disconnect_voice_client(server)
         await self.bot.say(":red_circle: **Stopped playing Radio!**")
+        self.playing = False
         
     @radioelectro.command()
     async def nowplaying(self):
         """Get Now Playing Song"""
         ip = IcyParser()
         await self.bot.say("Fetching Song Information...")
-        ip.getIcyInformation("http://play.theendlessweb.com:8000/song")
+        ip.getIcyInformation("http://play.theendlessweb.com:8000/stream.mp3")
         await asyncio.sleep(5)
         await self.bot.say(ip.icy_streamtitle)
         ip.stop()
