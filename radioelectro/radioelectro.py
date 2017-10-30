@@ -75,7 +75,7 @@ class RadioElectro:
     @radioelectro.command()
     async def togglestatus(self, status):
         """Toggle bot changing playing status to reflect song"""
-        if status = "on":
+        if status == "on":
             gameset = True
             await self.bot.say("Enabled Changing of Game.")
         else:
