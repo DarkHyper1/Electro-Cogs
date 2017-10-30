@@ -4,5 +4,6 @@
     "DISABLED" : false,
     "SHORT" : "Play RADIO ELECTRO On your server!",
     "NAME" : "radioelectro",
-    "INSTALL_MSG" : "Please note, this cog requires a computer that is somewhat powerful (NOT a Raspberry Pi) to transcode the Mp3 stream. It can also get disconnected and if that happens, just run the play command again. \nHey! It seems you have installed a cog of mine! First off, thanks! \nIf you run into troubles with these, please contact me on the Support Server, Or add me on Discord friends. - https://discord.gg/VvBjEEr \nThanks! - Electromaster#8890"
+    "INSTALL_MSG" : "Please note, this cog requires a computer that is somewhat powerful (NOT a Raspberry Pi) to transcode the Mp3 stream. It can also get disconnected and if that happens, just run the play command again. Also the IcyParser can have issues on Windows, if you are using it, please contact me for the fix. \nHey! It seems you have installed a cog of mine! First off, thanks! \nIf you run into troubles with these, please contact me on the Support Server, Or add me on Discord friends. - https://discord.gg/VvBjEEr \nThanks! - Electromaster#8890",
+    "REQUIREMENTS" : ["icyparser"]
 }
