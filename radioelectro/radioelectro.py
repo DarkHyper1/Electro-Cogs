@@ -72,7 +72,23 @@ class RadioElectro:
         await self.bot.say(ip.icy_streamtitle)
         ip.stop()
     
-        
+    @radioelectro.command()
+    async def togglestatus(self, status):
+        """Toggle bot changing playing status to reflect song"""
+        if status = "on":
+            gameset = True
+            await self.bot.say("Enabled Changing of Game.")
+        else:
+            gameset = False
+            await self.bot.say("Disabled Changing of Game.")
+        while gameset == True:
+            ip = IcyParser()   
+            ip.getIcyInformation("http://play.theendlessweb.com:8000/stream.mp3")
+            await asyncio.sleep(5)
+            await self.bot.change_presence(game=discord.Game(name=ip.icy_streamtitle))
+            ip.stop()
+            await asyncio.sleep(120)
+            
             
     def voice_client(self, server):
         return self.bot.voice_client_in(server)
