@@ -32,7 +32,7 @@ class dankmemes:
         db.close()
         
     @commands.command()
-    async def submitmemes(self, link):
+    async def submitmemes(self, *, link):
         """Submit memes. Or Dank ones."""
         
         
@@ -105,7 +105,7 @@ class dankmemes:
 
 def setup(bot):
     if MySQLdb_available is False:
-        raise RuntimeError("You don't have MySQLdb installed.")
+        raise RuntimeError("You don't have MySQLdb installed. Please install it with `pip3 install mysqlclient`")
         return
     bot.add_cog(dankmemes(bot))
 
