@@ -3,5 +3,6 @@
     "INSTALL_MSG" : "Thanks for installing my cogs lel. I hope you enjoy <3",
     "NAME" : "ElectroCogs",
     "SHORT" : "Some Amazing Cogs Made by a Student Learning Python.",
-    "DESCRIPTION" : "Amazing Cogs, made by the one and only Electromaster."
+    "DESCRIPTION" : "Amazing Cogs, made by the one and only Electromaster.",
+    "HIDDEN" : true
 }
