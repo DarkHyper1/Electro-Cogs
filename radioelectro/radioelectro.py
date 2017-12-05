@@ -49,7 +49,7 @@ class RadioElectro:
                 voice = await self.bot.join_voice_channel(voice_channel)
                 player = voice.create_ffmpeg_player('http://play.theendlessweb.com:8000/stream.mp3', use_avconv=self.use_avconv)
                 player.start()
-                await asyncio.sleep(300)
+                await asyncio.sleep(250)
                 await self._disconnect_voice_client(server)
    
     @radioelectro.command(pass_context=True, no_pm=True)
