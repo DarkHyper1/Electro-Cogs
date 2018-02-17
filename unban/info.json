@@ -1,7 +1,7 @@
 {
     "AUTHOR" : "DJ Electro#8890",
     "INSTALL_MSG" : "Hey!\nLooks like you installed my unban cog! *you have good choice :smirk:*\nDo note that it is recommeded to have the Red modlog on, as you need to supply the userid of the user you want to unban.\nEnjoy!",
-    "NAME" : "unban",
+    "NAME" : "Unban",
     "SHORT" : "Simple cog to unban users.",
     "DESCRIPTION" : "Simple cog to unban users.",
     "TAGS" : ["ban", "unban", "mod"],
