@@ -7,9 +7,9 @@ Its a little tricky but doable, so lets get into it
 ## Prerequesties (These must be executed from the console on the machine Red is running on)
 Depending on your OS, the commands will change:
 
-Debain / Ubuntu: ```sudo apt-get install python-dev libmysqlclient-dev```
+Debain / Ubuntu: ```sudo apt-get install libmysqlclient-dev```
 
-RedHat / CentOS: ```sudo yum install python-devel mysql-devel```
+RedHat / CentOS: ```sudo yum install mysql-devel```
 
 Windows / MacOS: No Extra Commands!
 
